@@ -15,6 +15,7 @@ from flask_mysqldb import MySQL
 from likes.addNewLikeToVideo import addNewLikeToVideoFunction
 from user.createNewUser import createNewUserFunction
 from user.getAllUsers import getAllUsersFunction
+from user.getUserInfo import getUserInfoFunction
 from user.getUserById import getUserByIdFunction
 from video.getAllVideos import getAllVideosFunction
 from video.uploadSimpleVideo import uploadNewSimpleVideoFunction
@@ -186,7 +187,7 @@ def userInfo():
     email = request.args.get('email')
     print(email)
 
-    res = getAllUsersFunction(mysql, cur)
+    res = getUserInfoFunction(mysql, cur, email)
 
     return res["body"], res["status"]
 
