@@ -180,15 +180,13 @@ def createUser():
     return res["body"], res["status"]
 
 
-@app.route("/create/user", methods=["POST"])
-def createUser():
+@app.route("/user/info")
+def userInfo():
     cur = mysql.connection.cursor()
-    request_data = request.get_json()
+    email = request.args.get('email')
+    print(email)
 
-    username = request_data["username"]
-    email = request_data["email"]
-
-    res = createNewUserFunction(mysql, cur, username, email)
+    res = getAllUsersFunction(mysql, cur)
 
     return res["body"], res["status"]
 
