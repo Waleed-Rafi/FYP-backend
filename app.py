@@ -264,16 +264,16 @@ def addLikeToVideo():
     return res["body"], res["status"]
 
 # -------------- current user likes -------------------
-@app.route("/video/like/user", methods=["POST"])
-def addLikeToVideo():
-    cur = mysql.connection.cursor()
-    request_data = request.get_json()
+# @app.route("/video/like/user", methods=["POST"])
+# def addLikeToVideo():
+#     cur = mysql.connection.cursor()
+#     request_data = request.get_json()
 
-    userId = request_data["userId"]
+#     userId = request_data["userId"]
 
-    res = addNewLikeToVideoFunction(mysql, cur, videoUrl, userId)
+#     res = addNewLikeToVideoFunction(mysql, cur, videoUrl, userId)
 
-    return res["body"], res["status"]
+#     return res["body"], res["status"]
 
 
 # --------------- LIKES --------------------
